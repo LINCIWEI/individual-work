@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+ <html><head>
+    <title>Individual Polar Bear Tracking</title>
+    </head><body>
+        <h1>Polar Bear Tagged for Tracking</h1>
+        {%for sightdetail in sightdetails%}
+        <p>Bear:
+            <b>{{sightdetail.product_id }}</b> |
+
+        </p>
+        {% endfor %}
+        <p>Sightings via Radio Device</p>
+    </body></html>

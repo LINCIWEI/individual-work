@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+ <html>
+<head>
+    <title>Polar Bear Tracking</title>
+    </head><body>
+        <h1>Polar bears Tagged for Trackingasdada</h1>
+        {% for tables in list %}
+        <p>
+        <a href="{% url 'shopping_detail' detail_id=tables.product_id|stringformat:'s' %}"> {{ tables.product_id }}</a>
+        {{ tables.product_id}}, {{ tables.price }} , {{ tables.promotion_name}},{{ tables.sales_country}}
+        </p>
+        {% endfor %}
+    </body></html>

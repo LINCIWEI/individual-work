@@ -127,4 +127,8 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static'), # 将 'static' 替换为您的静态文件目录
+    os.path.join(BASE_DIR, 'images'), # 添加新的静态文件目录路径，例如用于存放图片文件
+]

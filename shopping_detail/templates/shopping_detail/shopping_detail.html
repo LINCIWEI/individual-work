@@ -1,13 +1,81 @@
-<!DOCTYPE html>
- <html><head>
-    <title>Individual Polar Bear Tracking</title>
-    </head><body>
-        <h1>Polar Bear Tagged for Tracking</h1>
-        {%for sightdetail in sightdetails%}
-        <p>Bear:
-            <b>{{sightdetail.product_id }}</b> |
+<!--<!DOCTYPE html>-->
+<!-- <html><head>-->
+<!--    <title>Individual Polar Bear Tracking</title>-->
+<!--    </head><body>-->
+<!--        <h1>Polar Bear Tagged for Tracking</h1>-->
+<!--        {%for sightdetail in sightdetails%}-->
+<!--        <p>Bear:-->
+<!--            <b>{{sightdetail.product_id }}</b> |-->
+<!--    {{sightdetail.promotion_name }}-->
+<!--            {{sightdetail.sales_country }}-->
+<!--            {{sightdetail.sales_volume }}-->
+<!--            {{sightdetail.negative_comment }}-->
+<!--            {{sightdetail.price }}-->
+<!--              {{sightdetail.invoice_date }}-->
+<!--              {{sightdetail.supplier }}-->
+<!--              {{sightdetail.brand_name }}-->
 
-        </p>
-        {% endfor %}
-        <p>Sightings via Radio Device</p>
-    </body></html>
+
+<!--        </p>-->
+<!--        {% endfor %}-->
+<!--        <p>Sightings via Radio Device</p>-->
+<!--    </body></html>-->
+{% load static %}
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HTML+CSS 玻璃划过</title>
+
+      <link rel="stylesheet" href="{% static 'css/detail.css' %}">
+  </head>
+  <body>
+ {%for sightdetail in sightdetails%}
+  <div class="div1">
+    <div class="box">
+      <h1>bilibili</h1>
+<div>{{sightdetail.product_id }}</div>
+    </div>
+      <div class="box">
+      <h1>bilibili</h1>
+        <div>{{sightdetail.promotion_name }}</div>
+    </div>
+      <div class="box">
+      <h1>bilibili</h1>
+        <div> {{sightdetail.sales_country }}</div>
+    </div>
+
+</div>
+  <div class="div2">
+  <div class="box">
+      <h1>bilibili</h1>
+    <div>{{sightdetail.sales_volume }}</div>
+    </div>
+    <div class="box">
+      <h1>bilibili</h1>
+      <div>   {{sightdetail.negative_comment }}</div>
+    </div>
+    <div class="box">
+      <h1>bilibili</h1>
+      <div>  {{sightdetail.price }}</div>
+    </div>
+  </div>
+  <div class="div2">
+  <div class="box">
+      <h1>bilibili</h1>
+    <div>  {{sightdetail.invoice_date }}</div>
+    </div>
+    <div class="box">
+      <h1>bilibili</h1>
+      <div> {{sightdetail.supplier }}</div>
+    </div>
+    <div class="box">
+      <h1>bilibili</h1>
+      <div>  {{sightdetail.brand_name }}</div>
+    </div>
+  </div>
+   {% endfor %}
+   <div class="footer-space"></div>
+  </body>
+</html>

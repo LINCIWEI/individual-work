@@ -1,13 +1,29 @@
 <!DOCTYPE html>
- <html>
+<html>
 <head>
     <title>Polar Bear Tracking</title>
-    </head><body>
-        <h1>Polar bears Tagged for Trackingasdada</h1>
-        {% for tables in list %}
-        <p>
-        <a href="{% url 'shopping_detail' detail_id=tables.product_id|stringformat:'s' %}"> {{ tables.product_id }}</a>
-        {{ tables.product_id}}, {{ tables.price }} , {{ tables.promotion_name}},{{ tables.sales_country}}
-        </p>
-        {% endfor %}
-    </body></html>
+</head>
+<body>
+    <h1>Polar bears Tagged for Tracking</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Product ID</th>
+                <th>Price</th>
+                <th>Promotion Name</th>
+                <th>Sales Country</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for table in list %}
+            <tr>
+                <td><a href="{% url 'shopping_detail' detail_id=table.product_id|stringformat:'s' %}">{{ table.product_id }}</a></td>
+                <td>{{ table.price }}</td>
+                <td>{{ table.promotion_name }}</td>
+                <td>{{ table.sales_country }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

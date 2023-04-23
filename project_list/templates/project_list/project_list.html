@@ -5,6 +5,11 @@
 </head>
 <body>
     <h1>Polar bears Tagged for Tracking</h1>
+    <form method="GET" action="{% url 'project_list' %}">
+    <input type="text" name="keyword" placeholder="请输入关键字" value="{{ keyword }}">
+    <button type="submit">搜索</button>
+</form>
+
     <table>
         <thead>
             <tr>
@@ -21,6 +26,10 @@
                 <td>{{ table.price }}</td>
                 <td>{{ table.promotion_name }}</td>
                 <td>{{ table.sales_country }}</td>
+            </tr>
+            {% empty %}
+            <tr>
+                <td colspan="4">No results found.</td>
             </tr>
             {% endfor %}
         </tbody>

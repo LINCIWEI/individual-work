@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>用户注册</title>
+</head>
+<body>
+    <h1>用户注册</h1>
+    <form method="post">
+        {% csrf_token %}  <!-- CSRF token，用于防止跨站请求伪造攻击 -->
+        {{ form.as_p }}  <!-- 使用 form.as_p 渲染表单字段 -->
+        <button type="submit">注册</button>
+    </form>
+    <a href="{% url 'login' %}">已有账号？点击登录</a>  <!-- 跳转到登录页面的链接 -->
+</body>
+</html>

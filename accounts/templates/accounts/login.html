@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login</title>
+</head>
+<body>
+    <h1>Login</h1>
+    <form method="post">
+        {% csrf_token %}
+        <div for="{{ form.username.id_for_label }}">Username:</div>
+        {{ form.username }}
+        <br>
+        <div for="{{ form.password.id_for_label }}">Password:</div>
+        {{ form.password }}
+        <br>
+        <button type="submit">Login</button>
+    </form>
+    {% if messages %}
+    <ul>
+        {% for message in messages %}
+            <li>{{ message }}</li>
+        {% endfor %}
+    </ul>
+{% endif %}
+    <p>Don't have an account? <a href="{% url 'register' %}">Register</a></p>
+</body>
+</html>

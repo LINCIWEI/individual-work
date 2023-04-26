@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+
+<!-- cartapp/cart.html -->
+
+<html>
+<head>
+    <title>Cart</title>
+
+</head>
+<body>
+    <h1>Cart Items</h1>
+   <ul>
+    {% for cart_item in cart_items %}
+        <li>
+            {{ cart_item.product_id }} - {{ cart_item.price }} - {{ cart_item.promotion_name }} - {{ cart_item.sales_country }}
+            <a href="{% url 'delete_cart_item' cart_item.product_id %}">删除</a>
+        </li>
+    {% endfor %}
+</ul>
+</body>
+</html>

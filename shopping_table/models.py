@@ -30,3 +30,4 @@ class detailtable(models.Model):
 
     def __str__(self):
         return f'{self.product_id}, {self.price}, {self.promotion_name}, {self.sales_country}, {self.sales_volume}, {self.negative_comment}, {self.invoice_date}, {self.supplier}, {self.brand_name},'
+

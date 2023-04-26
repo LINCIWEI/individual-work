@@ -24,7 +24,7 @@ class Command(BaseCommand):
             reader = csv.reader(f, delimiter=",")
             next(reader)  # skip the header line
             for row in reader:
-                # print(row)
+                print(row)
 
                 summary_object = maintable.objects.create(
                     product_id=int(row[0]),

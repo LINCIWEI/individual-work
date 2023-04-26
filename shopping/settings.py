@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'project_list',
     'shopping_detail',
     'accounts',
+    'cartapp',
 ]
 
 MIDDLEWARE = [
@@ -61,7 +62,7 @@ ROOT_URLCONF = 'shopping.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS':[],
+        'DIRS':[os.path.join(BASE_DIR, 'shopping', 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

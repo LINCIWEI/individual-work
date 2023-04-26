@@ -22,14 +22,25 @@
         <tbody>
             {% for table in list %}
             <tr>
-                <td><a href="{% url 'shopping_detail' detail_id=table.product_id|stringformat:'s' %}">{{ table.product_id }}</a></td>
+                <td><a href="{% url 'shopping_detail' detail_id=table.product_id %}">{{ table.product_id }}</a></td>
                 <td>{{ table.price }}</td>
                 <td>{{ table.promotion_name }}</td>
                 <td>{{ table.sales_country }}</td>
+<td>
+    <form method="POST" action="{% url 'add_to_cart' %}">
+            {% csrf_token %}
+            <input type="hidden" name="product_id" value="{{ table.product_id }}">
+            <input type="hidden" name="price" value="{{ table.price }}">
+            <input type="hidden" name="promotion_name" value="{{ table.promotion_name }}">
+            <input type="hidden" name="sales_country" value="{{ table.sales_country }}">
+            <button type="submit">加入购物车</button>
+        </form>
+</td>
             </tr>
+
             {% empty %}
             <tr>
-                <td colspan="4">No results found.</td>
+                <td colspan="5">No results found.</td>
             </tr>
             {% endfor %}
         </tbody>

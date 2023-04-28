@@ -134,3 +134,5 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'), # 将 'static' 替换为您的静态文件目录
     os.path.join(BASE_DIR, 'images'), # 添加新的静态文件目录路径，例如用于存放图片文件
 ]
+SESSION_ENGINE = 'django.contrib.sessions.backends.db'
+SESSION_COOKIE_AGE = 86400

@@ -7,6 +7,6 @@ class cartItem(models.Model):
     promotion_name = models.TextField()
     sales_country = models.TextField()
     added_to_cart = models.BooleanField(default=False)
-
+    quantity = models.PositiveIntegerField(default=1)
     def __str__(self):
-        return f'{self.product_id}, {self.price}, {self.promotion_name}, {self.sales_country},'
+        return f'{self.product_id}, {self.price}, {self.promotion_name}, {self.sales_country},{self.quantity},'

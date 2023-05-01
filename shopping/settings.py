@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'shopping_detail',
     'accounts',
     'cartapp',
+    'chart',
 ]
 
 MIDDLEWARE = [
@@ -136,3 +137,4 @@ STATICFILES_DIRS = [
 ]
 SESSION_ENGINE = 'django.contrib.sessions.backends.db'
 SESSION_COOKIE_AGE = 86400
+SESSION_EXPIRE_AT_BROWSER_CLOSE = False

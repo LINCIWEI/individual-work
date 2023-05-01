@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+     integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="crossorigin=""/>
+     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+    integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="crossorigin=""></script>
+    <style>
+    #mapid { height: 350px; }
+    </style>
+      <style>
+    #chart-wrapper1 {
+            display: inline-block;
+            position: relative;
+            width: 600px;
+
+    }
+     #chart-wrapper2 {
+            display: inline-block;
+            position: relative;
+            width: 600px;
+
+    }
+    </style>
+
+</head>
+<body>
+<h1>Polar bears Tagged for Tracking</h1>
+
+<div id="chart-wrapper1" style="margin-left:100px;">
+         <canvas id="myChart"></canvas>
+
+            <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+            <script type= 'text/javascript'>
+            var ctx = document.getElementById('myChart').getContext('2d');
+            var chart = new Chart(ctx, {
+            // The type of chart we want to create
+            type: 'line',
+
+            // The data for our dataset
+            data: {
+                labels: ['USA', 'Canada', 'Mexico', 'other',],
+                datasets: [{
+                    label: 'sales country',
+                    backgroundColor: 'rgb(189, 99, 132)',
+                    borderColor: 'rgb(255, 99, 132)',
+                    data: [{{USA}}, {{Canada}}, {{Mexico}}, {{other}}]
+                }]
+            },
+
+            // Configuration options go here
+            options: {
+                responsive: true
+            }
+            });
+            {{story}}
+            </script>
+</div>
+
+<div id="chart-wrapper2"style="margin-left:100px;">
+         <canvas id="myChart2"></canvas>
+
+            <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+            <script type= 'text/javascript'>
+            var ctx2 = document.getElementById('myChart2').getContext('2d');
+            var chart2 = new Chart(ctx2, {
+            // The type of chart we want to create
+            type: 'bar',
+
+            // The data for our dataset
+            data: {
+                labels: ['USA', 'Canada', 'Mexico', 'other',],
+                datasets: [{
+                    label: 'sales country',
+                    backgroundColor: 'rgb(255, 99, 132)',
+                    borderColor: 'rgb(255, 99, 132)',
+                    data: [{{USA}}, {{Canada}}, {{Mexico}}, {{other}}]
+                }]
+            },
+
+            // Configuration options go here
+            options: {
+                responsive: true
+            }
+            });
+            {{story}}
+            </script>
+</div>
+ <div id="mapid"></div>
+     <div>Icons made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from
+      <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+      <script type = "text/javascript">
+        var mymap = L.map('mapid').setView([70.87,-152.56], 6 );
+
+          accessToken: 'no-token',
+        L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+       attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>',
+       maxZoom: 18,
+   }).addTo(mymap);
+   var taggingIcon = L.icon({
+
+     iconSize: [35, 35] });
+     var marker = L.marker([{{ bear.capture_lat }}, {{bear.capture_long }}], {icon: taggingIcon }).addTo(mymap);
+   </script>
+
+</body>
+</html>

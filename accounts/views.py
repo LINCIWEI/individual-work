@@ -1,8 +1,9 @@
 from django.shortcuts import render, redirect
-from django.contrib.auth import authenticate, login
-from django.contrib.auth.forms import AuthenticationForm
+from django.contrib.auth import login
+from django.contrib.auth.forms import AuthenticationForm, UserCreationForm
 from django.contrib import messages
-
+from django.contrib.auth import logout
+from django.urls import reverse
 def login_view(request):
     if request.method == 'POST':
         # 处理登录表单的提交
@@ -23,7 +24,8 @@ def login_view(request):
 
 # 用户注销
 def logout_view(request):
-    return LogoutView.as_view(template_name='logged_out.html')(request)
+    logout(request)
+    return redirect(request.META.get('HTTP_REFERER', reverse('index')))
 
 # 用户注册
 

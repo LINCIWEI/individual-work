@@ -47,14 +47,14 @@
                 <td>{{ cart_item.promotion_name }}</td>
                 <td>{{ cart_item.sales_country }}</td>
                 <td>
-                    <select id="quantity{{ cart_item.product_id }}" name="quantity" onchange="updateTotal()">
-                        <option value="0"{% if cart_item.quantity == 0 %} selected{% endif %}>0</option>
-                        <option value="1"{% if cart_item.quantity == 1 %} selected{% endif %}>1</option>
-                        <option value="2"{% if cart_item.quantity == 2 %} selected{% endif %}>2</option>
-                        <option value="3"{% if cart_item.quantity == 3 %} selected{% endif %}>3</option>
-                        <option value="4"{% if cart_item.quantity == 4 %} selected{% endif %}>4</option>
-                        <option value="5"{% if cart_item.quantity == 5 %} selected{% endif %}>5</option>
-                    </select>
+                 <select id="quantity{{ cart_item.product_id }}" name="quantity" onchange="updateTotal()">
+                    {% for i in ""|center:100 %}
+                            <option value="{{ forloop.counter0}}">{{ forloop.counter0 }}</option>
+                    {% endfor %}
+
+                 </select>
+
+
                 </td>
                 <td>
                     <a href="{% url 'delete_cart_item' cart_item.product_id %}">删除</a>
@@ -66,5 +66,6 @@
     <div>
         Total: $<span id="total">0.00</span>
     </div>
+    <a href="{% url 'project_list' %}"> 退回去</a>
 </body>
 </html>

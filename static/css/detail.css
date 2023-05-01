@@ -6,22 +6,22 @@
 
 .div1{
     display:flex;
-    margin-left:15%;
-    margin-top:15%;
+    margin-left:11%;
+    margin-top:15px;
     flex-wrap: wrap;
 
 }
 .div2{
 
     display:flex;
-    margin-left:15%;
+    margin-left:11%;
      margin-top:3%;
 }
 .box {
     /* 相对定位 */
 
-    width: 300px;
-    height: 200px;
+    width: 328px;
+    height: 210px;
     line-height: 100px;
     text-align: 20px;
 

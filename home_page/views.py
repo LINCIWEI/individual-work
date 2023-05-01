@@ -18,6 +18,7 @@ def story():
         )
     return mystory
 
+
 def index(request):
     mystory = story()
     return render(request, 'home_page/index.html', {'story': mystory})

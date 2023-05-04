@@ -4,13 +4,13 @@
 from django.shortcuts import render, get_object_or_404
 
 from shopping_table.models import detailtable
-
+from django.contrib.auth.decorators import user_passes_test
 
 def chart(request):
     story = 'aaaaaa'
     return render(request, 'chart.html', {'story': story})
 
-
+@user_passes_test(lambda u: u.is_superuser)
 def country_chart(request):
     try:
         country = detailtable.objects.all()

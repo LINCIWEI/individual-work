@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-&t@ohi+05a9=36b^$66-t=nb3ve!)=2fdh01z#e*&vol-nqy)-
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['linciwei-django-shopping.onrender.com']
+ALLOWED_HOSTS = ['linciwei-django-shopping.onrender.com','127.0.0.1']
 
 
 # Application definition

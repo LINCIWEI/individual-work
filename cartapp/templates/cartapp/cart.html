@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+{% include 'sidebar.html' %}
 {% load static %}
 <html>
 <head>
@@ -37,14 +38,17 @@
     </script>
 </head>
 <body>
+{% block content %}
+   <div id="absolute" style="position:absolute; top: 54px; left: 96px;">
     <h1>Cart Items</h1>
     <div class="container">
     <table>
         <thead>
             <tr>
+                 <th>Promotion Name</th>
                 <th>Product ID</th>
                 <th>Price</th>
-                <th>Promotion Name</th>
+
                 <th>Sales Country</th>
                 <th>Quantity</th>
                 <th>Action</th>
@@ -53,9 +57,10 @@
         <tbody>
             {% for cart_item in cart_items %}
             <tr>
+                 <td>{{ cart_item.promotion_name }}</td>
                 <td>{{ cart_item.product_id }}</td>
                 <td name="price">{{ cart_item.price }}</td>
-                <td>{{ cart_item.promotion_name }}</td>
+
                 <td>{{ cart_item.sales_country }}</td>
                 <td>
                  <select id="quantity{{ cart_item.product_id }}" name="quantity" onchange="updateTotal()">
@@ -74,10 +79,12 @@
             {% endfor %}
         </tbody>
     </table>
-    <div>
+    <div style="float:right;font-size:1.6em; font-weight: bold;">
         Total: $<span id="total">0.00</span>
     </div>
-    <a href="{% url 'project_list' %}"> 退回去</a>
+    <a href="{% url 'project_list' %}"> go back</a>
     </div>
+   </div>
+{% endblock %}
 </body>
 </html>

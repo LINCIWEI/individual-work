@@ -38,10 +38,10 @@
 <body>
 {% block content %}
 <div style="position:absolute; top: 54px; left: 96px;">
-<h1>Polar bears Tagged for Tracking</h1>
+<h1>Commodity background data</h1>
 <div id="big"style="display:flex">
 <div id="chart1">
-    <div style="">asdasdad</div>
+    <div style=" font-weight: bold;font-size: 1.2em; color: rgb(50, 193, 217); margin-top:10px">the number of exports by different countries</div>
 <div id="chart-wrapper1" style="margin-left:100px;">
          <canvas id="myChart"></canvas>
 
@@ -56,7 +56,7 @@
             data: {
                 labels: ['USA', 'Canada', 'Mexico', 'other',],
                 datasets: [{
-                    label: 'sales country',
+                    label: 'quantity of commodity',
                     backgroundColor: 'rgb(139, 233, 222)',
                     borderColor: 'rgb(139, 233, 222)',
                     data: [{{USA}}, {{Canada}}, {{Mexico}}, {{other}}]
@@ -73,7 +73,7 @@
 </div>
 </div>
 <div id="chart2">
-    <div style="">asdasdad</div>
+    <div  style=" font-weight: bold;font-size: 1.2em; color: rgb(50, 193, 217); margin-top:10px">Number of bad reviews for each brand</div>
 <div id="chart-wrapper2"style="margin-left:100px;">
          <canvas id="myChart2"></canvas>
 
@@ -106,6 +106,7 @@
 </div>
 </div>
 <div id="chart-wrapper3"style="margin-left:100px;">
+     <div  style=" font-weight: bold;font-size: 1.2em; color: rgb(50, 193, 217); margin-top:10px">Commodity sales volume of each supplier</div>
          <canvas id="myChart3"></canvas>
 
             <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>

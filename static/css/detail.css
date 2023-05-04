@@ -8,7 +8,7 @@
     display:flex;
     margin-left:11%;
     margin-top:15px;
-    flex-wrap: wrap;
+
 
 }
 .div2{
@@ -57,4 +57,7 @@ margin-top:-20px;
 }
 .footer-space {
   height: 200px; /* 设置高度为100px，您可以根据需要调整 */
+}
+.wenzi div{
+
 }

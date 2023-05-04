@@ -13,22 +13,15 @@
     <nav>
       <img src="./img/logo.png" alt="">
       {% if user.is_authenticated %}
-    <p>欢迎，{{ user.username }}！ <a href="{% url 'logout' %}">退出登录</a></p>
+    <p>welcome，{{ user.username }}！ <a href="{% url 'logout' %}">log out</a></p>
 {% else %}
-    <p><a href="{% url 'login' %}">登录</a> 或 <a href="{% url 'register' %}">注册</a></p>
+    <p><a href="{% url 'login' %}">login</a> 或 <a href="{% url 'register' %}">register</a></p>
 {% endif %}
-      <ul>
 
-        <li><a href="{%url 'login' %}">登录</a></li>
-        <li><a href="#">男士</a></li>
-        <li><a href="#">女士</a></li>
-        <li><a href="#">儿童</a></li>
-        <li><a href="#">家居&生活</a></li>
-      </ul>
     </nav>
     <div class="text-box">
-      <h1>让每个人尽享时尚的快乐</h1>
-      <p>当MING MA的优雅坚毅与PEACEBIRD的年轻活力相遇，每一种色彩、每一朵花的姿态，都是设计师笔下对浪漫与生命力的赞颂。</p>
+      <h1>Let everyone enjoy the joy of shopping</h1>
+      <p>When the elegant persistence of products meets the youthful vitality of young people, every color and gesture of every flower is a tribute to romance and vitality under the pen of designers. </p>
       <a href="{% url 'project_list' %}">Shop Now</a>
     </div>
     <div class="user-box">

@@ -8,7 +8,7 @@ Some of the features in the project require superuser permissions to be used. If
     
 You can also log in directly using the super administrator account that I have created
 #### username: t16cl22@abdn.ac.uk
-#### passwords: LCW@22offer
+#### passwords: feiyue1998610
 
 # instructions
 ## Configuring the development environment

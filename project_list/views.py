@@ -34,7 +34,7 @@ def project_list(request):
     elif sort == 'desc':
         list = list.order_by('-price')
 
-    paginator = Paginator(list, 8)
+    paginator = Paginator(list, 7)
     page_number = request.GET.get('page', 1)
     page_obj = paginator.get_page(page_number)
 

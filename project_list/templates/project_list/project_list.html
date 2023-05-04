@@ -11,6 +11,12 @@
 		<link rel="stylesheet" type="text/css" href="{% static 'css/list1.css' %}">
          <link href="https://cdn.bootcdn.net/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
        <link rel="stylesheet" type="text/css" href="{% static 'css/25.css' %}">
+     <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+
+
+    <link href="https://cdn.bootcdn.net/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/36.css' %}">
 </head>
 <body>
   <div class="navbar"style="display:flex">
@@ -41,14 +47,9 @@
                     <span>商品列表</span>
                 </a>
             </li>
+
             <li>
-                <a href="javascript:void(0)">
-                    <i class="fa fa-user-circle-o" aria-hidden="true"></i>
-                    <span>用户列表</span>
-                </a>
-            </li>
-            <li>
-                <a href="javascript:void(0)">
+                <a href="{% url 'add_to_cart' %}">
                     <i class="fa fa-shopping-bag" aria-hidden="true"></i>
                     <span>订单列表</span>
                 </a>
@@ -60,23 +61,31 @@
                 </a>
             </li>
         </ul>
-        <div style="margin-top:5%">
-
+        <div style="margin-top:3%">
+<div id="big" style="margin-left:5%;">
     <h1>Product Catalogue</h1>
 
 <form method="GET" action="{% url 'project_list' %}">
-    <input type="text" name="keyword" placeholder="请输入关键字" value="{{ keyword }}">
+    <div class="search-box">
+    <input type="text" class="search-txt" name="keyword" placeholder="请输入关键字" value="{{ keyword }}">
+         <button class="search-btn" type="submit">
+            <i class="fa fa-search" aria-hidden="true"></i>
+        </button>
+        </div>
+
+    <div style="margin-top:80px;margin-le">
     <input type="text" name="min_price" placeholder="最低价格" value="{{ min_price }}">
     <input type="text" name="max_price" placeholder="最高价格" value="{{ max_price }}">
-    <button type="submit">搜索</button>
-</form>
-
-<!-- 在搜索结果下方添加排序选项 -->
+        </div>
 <div>
-    <p>排序：</p>
+
     <a href="{% url 'project_list' %}?{{ request.GET.urlencode }}&sort=asc">价格升序</a>
     <a href="{% url 'project_list' %}?{{ request.GET.urlencode }}&sort=desc">价格降序</a>
 </div>
+</form>
+
+<!-- 在搜索结果下方添加排序选项 -->
+
 
 <!-- 显示搜索结果 -->
 
@@ -140,6 +149,7 @@
 </div>
 
     </div>
+        </div>
         </div>
   </div>
 </body>
